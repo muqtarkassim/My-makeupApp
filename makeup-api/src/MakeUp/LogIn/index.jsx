@@ -36,23 +36,19 @@ const Login = () => {
         <Row>
           {/* First Column */}
           <Col md={6}>
-           
+
               {imagesColumn1.map((imageUrl, index) => (
                 <Card key={index}>
                   <Card.Img variant="top" src={imageUrl} />
-                 
-                </Card>
+                 </Card>
               ))}
-            
           </Col>
-
           {/* Second Column */}
           <Col md={6}>
             
               {imagesColumn2.map((imageUrl, index) => (
                 <Card key={index}>
                   <Card.Img variant="top" src={imageUrl} />
-                  
                 </Card>
               ))}
           </Col>
