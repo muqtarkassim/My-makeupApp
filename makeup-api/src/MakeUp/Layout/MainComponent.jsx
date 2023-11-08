@@ -59,10 +59,8 @@ function MainComponent(){
           ))}
         </div>
       </div>
-       
-      </div>
-
-            </div>
+     </div>
+     </div>
     )
 }
 export default MainComponent;
