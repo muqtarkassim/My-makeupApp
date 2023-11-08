@@ -26,10 +26,9 @@ function MakeUp() {
         <Route path="" element={<Login/>} />
         <Route path="layout" element={<Layout/>}>
           <Route path="" element={<MainComponent/>} />
-          <Route path="view/:id" element={<ProductDetails />} />
-          <Route path="list" element={<ProductList />} />
+         <Route path="list" element={<ProductList />} />
+         <Route path="details/:id/" element={<ProductDetails />} />
           <Route path="addtocart" element={<AddToCart />} />
-    
         </Route>
         
         <Route path="*" element={<NOTFOUND/>} />
