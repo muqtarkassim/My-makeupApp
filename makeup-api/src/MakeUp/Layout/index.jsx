@@ -18,14 +18,13 @@ function Layout() {
                  All Products
               </Nav.Link>
               <Nav.Link as={Link} to="addtocart">
-                Added To Cart
+                Your Cart
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
-      {/* Outlet for rendering nested routes */}
+{/* Outlet for rendering nested routes */}
       <Outlet />
     </div>
   );
