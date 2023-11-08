@@ -27,7 +27,7 @@ const Login = () => {
     <div>
         <div className="card-header">
           <h1>LOGIN</h1>
-          <button className="btn btn-primary" onClick={toLayout}>
+          <button className="btn btn-dark btn-lg" onClick={toLayout}>
             HOME
           </button>
         </div>
@@ -45,7 +45,7 @@ const Login = () => {
           </Col>
           {/* Second Column */}
           <Col md={6}>
-            
+        
               {imagesColumn2.map((imageUrl, index) => (
                 <Card key={index}>
                   <Card.Img variant="top" src={imageUrl} />
