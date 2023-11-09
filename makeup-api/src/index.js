@@ -1,10 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom/client"; // DOM -> Document object
+import ReactDOM from "react-dom/client"; 
 
 
 import MakeUp from "./MakeUp";
 
-//import "./bootstrap.css";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

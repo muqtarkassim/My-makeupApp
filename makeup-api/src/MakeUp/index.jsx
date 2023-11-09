@@ -27,7 +27,7 @@ function MakeUp() {
         <Route path="layout" element={<Layout/>}>
           <Route path="" element={<MainComponent/>} />
          <Route path="list" element={<ProductList />} />
-          <Route path="addtocart" element={<AddToCart />} />
+          <Route path="addedtocart" element={<AddToCart />} />
           <Route path="details/:id" element={<ProductDetails />} />
         </Route>
         
