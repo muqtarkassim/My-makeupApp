@@ -1,38 +1,50 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { UserContext } from "./ProductList";
+import ProductItem from "./product";
+import { useNavigate } from 'react-router-dom';
 
 
-function DisplayComponent({ currentPage, itemsPerPage }) {
+
+function DisplayComponent({ currentPage, itemsPerPage,carts,setcarts }) {
   const products = useContext(UserContext);
+  ///
+  const navigate = useNavigate();
 
+      
+  const handleclick=(id)=>{
+  const selectedP=products.find((p)=> id===p.id)
+  if (!carts.some((cart) => cart.id ===selectedP.id)){
+    setcarts([...carts,selectedP])
+    navigate('/layout/addtocart');
+  }
+  else{ alert(' Item Already in cart')}
+  }
+  console.log(carts)
+  ////
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
 const displayedProducts = products.slice(startIndex, endIndex);
+/////////
+const mappedProducts = displayedProducts.map((product) => (
+  <ProductItem
+    key={product.id} 
+    image={product.image_link}
+    name={product.name}
+    brand={product.brand}
+    category={product.category}
+    price_sign={product.price_sign}
+    handleclick={handleclick}
+    id={product.id}
+  />
+));
+
+////////////
 
   return (
      <div className="container">
       <div className="row">
-        {displayedProducts.map((product) => (
-          <div key={product.id}
-          className="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div className="card card-hover">
-              <img
-                src={product.image_link}
-                className="card-img-top shadow-lg p-3 mb-5 bg-body-tertiary rounded"
-                alt={product.name}
-              />
-              <div className="card-body">
-                <h5 className="card-title">{product.brand}</h5>
-                <p className="card-text">{product.category}</p>
-                <p className="card-text">
-                  {product.price}
-                  <span>{product.price_sign}</span>
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
+        {mappedProducts}
       </div>
     </div>
     

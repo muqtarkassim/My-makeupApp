@@ -1,10 +1,8 @@
 import React, { useState, useEffect, createContext } from "react";
 import DisplayComponent from "./DisplayComponent";
 import PaginationControls from "./PaginationControls";
-
-
 export const UserContext = createContext();
-function ProductList (){
+function ProductList ({carts,setcarts}){
     const [products, setProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(10);
@@ -27,7 +25,9 @@ function ProductList (){
       <div>
       <DisplayComponent
         currentPage={currentPage}
-         itemsPerPage={itemsPerPage} />
+         itemsPerPage={itemsPerPage} 
+         carts={carts} setcarts={setcarts}
+         />
 
          <PaginationControls
           currentPage={currentPage}
