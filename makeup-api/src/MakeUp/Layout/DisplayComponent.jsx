@@ -11,7 +11,7 @@ function DisplayComponent({ currentPage, itemsPerPage }) {
 const displayedProducts = products.slice(startIndex, endIndex);
 
   return (
-    <div className="container">
+     <div className="container">
       <div className="row">
         {displayedProducts.map((product) => (
           <div key={product.id}
@@ -35,6 +35,7 @@ const displayedProducts = products.slice(startIndex, endIndex);
         ))}
       </div>
     </div>
+    
   );
 }
 
