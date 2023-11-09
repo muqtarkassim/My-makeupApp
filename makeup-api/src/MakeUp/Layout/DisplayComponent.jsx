@@ -1,15 +1,20 @@
 import React, { useContext } from "react";
 import { UserContext } from "./ProductList";
-import { useNavigate } from "react-router-dom";
 
-function DisplayComponent() {
+
+function DisplayComponent({ currentPage, itemsPerPage }) {
   const products = useContext(UserContext);
-  const navigate = useNavigate();
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+
+const displayedProducts = products.slice(startIndex, endIndex);
+
   return (
     <div className="container">
       <div className="row">
-        {products.map((product) => (
-          <div key={product.id}  onClick={() => navigate(`details/${product.id}`)}
+        {displayedProducts.map((product) => (
+          <div key={product.id}
           className="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div className="card card-hover">
               <img
