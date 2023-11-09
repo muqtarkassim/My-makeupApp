@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, Card } from "react-bootstrap";
 
 const imagesColumn1 = [
-  "https://i.pinimg.com/564x/a6/56/97/a6569716dcd6f22b27a4d3df74fb0e96.jpg",
+  "https://i.pinimg.com/564x/05/c1/7b/05c17ba30e3dfd50a826a55b5890f1a0.jpg",
   
   
 ];
 
 const imagesColumn2 = [
-  "https://i.pinimg.com/236x/14/07/54/140754871ea46589e7fc91245715d1c3.jpg",
+  "https://i.pinimg.com/564x/9e/ef/65/9eef65c5274bf20515549ade9a55d174.jpg",
  
 ];
 
